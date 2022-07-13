@@ -15,27 +15,27 @@ interface ApiService {
     @GET("search")
     fun getRockMusic(
         @Query("term") term: String = "rock",
-        @Query("media") media: String = "music",
-        @Query("entity") entity: String = "song",
-        @Path("limit={limit}") limit: Int = 50
+        @Query("amp;media") media: String = "music",
+        @Query("amp;entity") entity: String = "song",
+        @Query("amp;limit") limit: Int = 50
     ): Call<Root>
 
     //https://itunes.apple.com/search?term=classick&amp;media=music&amp;entity=song&amp;limit=50
     @GET("search")
     fun getClassicMusic(
         @Query("term") term: String = "classic",
-        @Query("media") media: String = "music",
-        @Query("entity") entity: String = "song",
-        @Path("limit={limit}") limit: Int = 50
+        @Query("amp;media") media: String = "music",
+        @Query("amp;entity") entity: String = "song",
+        @Query("amp;limit") limit: Int = 50
     ): Call<Root>
 
     //https://itunes.apple.com/search?term=pop&amp;media=music&amp;entity=song&amp;limit=50
     @GET("search")
     fun getPopMusic(
         @Query("term") term: String = "pop",
-        @Query("media") media: String = "music",
-        @Query("entity") entity: String = "song",
-        @Path("limit={limit}") limit: Int = 50
+        @Query("amp;media") media: String = "music",
+        @Query("amp;entity") entity: String = "song",
+        @Query("amp;limit") limit: Int = 50
     ): Call<Root>
 
     companion object{
