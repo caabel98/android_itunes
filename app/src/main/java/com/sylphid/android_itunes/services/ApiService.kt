@@ -5,6 +5,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -15,7 +16,8 @@ interface ApiService {
     fun getRockMusic(
         @Query("term") term: String = "rock",
         @Query("media") media: String = "music",
-        @Query("entity") entity: String = "song"
+        @Query("entity") entity: String = "song",
+        @Path("limit={limit}") limit: Int = 50
     ): Call<Root>
 
     //https://itunes.apple.com/search?term=classick&amp;media=music&amp;entity=song&amp;limit=50
@@ -23,7 +25,8 @@ interface ApiService {
     fun getClassicMusic(
         @Query("term") term: String = "classic",
         @Query("media") media: String = "music",
-        @Query("entity") entity: String = "song"
+        @Query("entity") entity: String = "song",
+        @Path("limit={limit}") limit: Int = 50
     ): Call<Root>
 
     //https://itunes.apple.com/search?term=pop&amp;media=music&amp;entity=song&amp;limit=50
@@ -31,7 +34,8 @@ interface ApiService {
     fun getPopMusic(
         @Query("term") term: String = "pop",
         @Query("media") media: String = "music",
-        @Query("entity") entity: String = "song"
+        @Query("entity") entity: String = "song",
+        @Path("limit={limit}") limit: Int = 50
     ): Call<Root>
 
     companion object{
