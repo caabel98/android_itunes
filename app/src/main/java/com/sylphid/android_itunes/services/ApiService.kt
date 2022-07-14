@@ -13,30 +13,14 @@ interface ApiService {
 
     //https://itunes.apple.com/search?term=rock&amp;media=music&amp;entity=song&amp;limit=50
     @GET("search")
-    fun getRockMusic(
-        @Query("term") term: String = "rock",
+    fun getMusic(
+        @Query("term") term: String,
         @Query("amp;media") media: String = "music",
         @Query("amp;entity") entity: String = "song",
         @Query("amp;limit") limit: Int = 50
     ): Call<Root>
-
     //https://itunes.apple.com/search?term=classick&amp;media=music&amp;entity=song&amp;limit=50
-    @GET("search")
-    fun getClassicMusic(
-        @Query("term") term: String = "classic",
-        @Query("amp;media") media: String = "music",
-        @Query("amp;entity") entity: String = "song",
-        @Query("amp;limit") limit: Int = 50
-    ): Call<Root>
-
     //https://itunes.apple.com/search?term=pop&amp;media=music&amp;entity=song&amp;limit=50
-    @GET("search")
-    fun getPopMusic(
-        @Query("term") term: String = "pop",
-        @Query("amp;media") media: String = "music",
-        @Query("amp;entity") entity: String = "song",
-        @Query("amp;limit") limit: Int = 50
-    ): Call<Root>
 
     companion object{
         val baseUrl: String = "https://itunes.apple.com/"
