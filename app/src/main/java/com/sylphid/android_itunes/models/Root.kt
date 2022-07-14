@@ -1,10 +1,15 @@
 package com.sylphid.android_itunes.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+
 data class Root(
     val resultCount: Int,
     val results: List<SongResponse>
 )
 
+@Parcelize
 data class SongResponse(
     val wrapperType: String,
     val kind: String,
@@ -35,4 +40,7 @@ data class SongResponse(
     val currency: String,
     val primaryGenreName: String,
     val isStreamable: Boolean
-)
+): Parcelable{
+    fun getFullPrice() = "$collectionPrice $currency"
+}
+
