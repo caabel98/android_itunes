@@ -41,6 +41,6 @@ data class SongResponse(
     val primaryGenreName: String,
     val isStreamable: Boolean
 ): Parcelable{
-    fun getFullPrice() = "$collectionPrice $currency"
+    fun getFullPrice() = "$trackPrice $currency"
 }
 
